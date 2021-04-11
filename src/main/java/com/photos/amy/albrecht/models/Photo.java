@@ -32,7 +32,7 @@ public class Photo {
 	private List<Tag> pTags; //all the tags for a photo
 	//private String pTags; //all the tags for a photo
 	
-	@ManyToOne(targetEntity = Album.class, fetch = FetchType.LAZY)
+	@ManyToOne(targetEntity = Album.class, cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	private Album pAlbum;
 
 	//constructors

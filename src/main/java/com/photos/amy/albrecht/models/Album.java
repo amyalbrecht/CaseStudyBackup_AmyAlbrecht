@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+
 @Entity 
 @Table(name = "album")
 public class Album implements Serializable {
@@ -26,7 +28,7 @@ public class Album implements Serializable {
 	@Column(name = "albumName", nullable = false, length = 50)
 	String albumName;
 	
-	@OneToMany(targetEntity = Photo.class, fetch = FetchType.EAGER)
+	@OneToMany(targetEntity = Photo.class, cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	private List<Photo> aPhotos; //all the photos in an album
 	
 	//constructors

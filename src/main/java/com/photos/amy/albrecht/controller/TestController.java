@@ -279,6 +279,7 @@ public class TestController {
 		photoServices.savePhoto(photo);
 		
 		Album album = photo.getpAlbum();
+		
 		int id = album.getAlbumId();
 		
 		mav.setViewName("redirect:about");
